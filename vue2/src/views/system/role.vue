@@ -2,7 +2,7 @@
  * @Description: 文件内容描述
  * @Date: 2023-04-20 14:51:46
  * @LastEditors: 无言的对话
- * @LastEditTime: 2023-04-21 16:46:03
+ * @LastEditTime: 2023-04-24 13:45:02
  * @FilePath: \vue2\src\views\system\role.vue
 -->
 <template>
@@ -52,10 +52,10 @@ export default {
         // 授权
         Authority() {
             menuGrantTree().then(async (response) => {
-                console.log('response', response)
+                const list = response.data.data
                 const result = await treeKeys()
-                console.log('result', result)
-                this.$refs.Authority.showVisible()
+                const menu = result.data.data.menu
+                this.$refs.Authority.showVisible(list, menu)
             })
         },
         // 获取数据
