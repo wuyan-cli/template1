@@ -2,7 +2,7 @@
  * @Description: mock 假数据
  * @Date: 2023-04-19 16:45:15
  * @LastEditors: 无言的对话
- * @LastEditTime: 2023-04-24 15:28:30
+ * @LastEditTime: 2023-04-24 16:54:07
  * @FilePath: \vue2\mock\index.js
  */
 // 首先引入Mock
@@ -55,15 +55,7 @@ const MenuList = Mock.mock('/menu/routes', 'get',
                         "path": "/system/user",
                         "source": "iconfont iconicon_principal",
                     },
-                    {
-                        "id": "1123598815738675205",
-                        "parentId": "1123598815738675203",
-                        "code": "dept",
-                        "name": "部门管理",
-                        "alias": "menu",
-                        "path": "/system/dept",
-                        "source": "iconfont iconicon_group",
-                    },
+
                     {
                         "id": "1123598815738675308",
                         "parentId": "1123598815738675203",
@@ -116,15 +108,7 @@ const MenuAll = Mock.mock('/menu/all', 'get',
                         "path": "/system/user",
                         "source": "iconfont iconicon_principal",
                     },
-                    {
-                        "id": "1123598815738675205",
-                        "parentId": "1123598815738675203",
-                        "code": "dept",
-                        "name": "部门管理",
-                        "alias": "menu",
-                        "path": "/system/dept",
-                        "source": "iconfont iconicon_group",
-                    },
+
                     {
                         "id": "1123598815738675308",
                         "parentId": "1123598815738675203",
@@ -210,6 +194,21 @@ const roleList = Mock.mock('/role/list', 'get',
         ],
         "msg": "操作成功"
     });
+const userList = Mock.mock('/user/list', 'get',
+    {
+        "code": 200,
+        "success": true,
+        "data": [
+            {
+                'id': "1123598816738675201",
+                "roleName": "超级管理员",
+                "userName": "测试人员1",
+                "sort": 1,
+                "updateTime": '2023-03-24',
+            }
+        ],
+        "msg": "操作成功"
+    });
 
 const menuGrantTree = Mock.mock('/menu/grant-tree', 'get',
     {
@@ -235,5 +234,6 @@ export default {
     ButtonList,
     rolekeys,
     roleList,
-    menuGrantTree
+    menuGrantTree,
+    userList
 }
