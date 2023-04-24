@@ -2,7 +2,7 @@
  * @Description: 文件内容描述
  * @Date: 2023-04-19 17:05:30
  * @LastEditors: 无言的对话
- * @LastEditTime: 2023-04-20 10:40:23
+ * @LastEditTime: 2023-04-24 16:34:03
  * @FilePath: \vue2\src\views\public\login.vue
 -->
 <template>
@@ -81,6 +81,7 @@ export default {
                     })
                     this.$store.dispatch('LoginByUsername', this.loginForm).then((response) => {
                         console.log('data')
+                        this.$router.push('/')
                         loading.close()
                     }).catch(() => {
                         loading.close()
